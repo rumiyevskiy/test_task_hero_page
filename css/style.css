@@ -1,0 +1,223 @@
+* {
+  scrollbar-width: none;
+}
+
+.wrapper {
+  overflow: clip;
+  min-height: 100%;
+}
+
+[class*=__container] {
+  max-width: 1230px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 60px 0 0 0;
+  position: relative;
+}
+
+.hero__container {
+  display: flex;
+}
+.hero__container::after, .hero__container::before {
+  content: "";
+  position: absolute;
+  background-color: #4475F2;
+  width: 200vw;
+  height: 150%;
+  transform-origin: left bottom;
+  border-radius: 50px;
+  bottom: 0;
+}
+.hero__container::before {
+  left: calc(50% + 30px);
+  transform: skewX(0deg);
+  transition: all 0.8s ease 0s;
+}
+.hero__container::after {
+  transform: skewX(0deg);
+  left: calc(50% + 444px);
+  transition: all 0.8s ease 0s;
+}
+.hero__container.active::before {
+  left: calc(50% + 30px);
+  transform: skewX(-20deg);
+}
+.hero__container.active::after {
+  transform: skewX(30deg);
+  left: calc(50% + 444px);
+}
+@media (max-width: 1200px) {
+  .hero__container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+  }
+}
+
+.hero__content {
+  flex: 0 1 50%;
+}
+
+.content-hero {
+  display: grid;
+  align-content: start;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+@media (min-width: 1200px) {
+  .content-hero {
+    padding-right: 20px;
+  }
+}
+@media (min-width: 479.98px) {
+  .content-hero {
+    justify-items: start;
+  }
+}
+
+.content__title {
+  font-size: calc(45px + 31 * (100vw - 320px) / 1120);
+  font-weight: 800;
+  line-height: 117.10526%; /* 89/76*100 */
+  transform: translate(0px, 10%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+.content__title a {
+  text-decoration: underline;
+}
+.content__title a:hover {
+  text-decoration: none;
+}
+.content__title.active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.content__text {
+  transform: translate(10%, 0px);
+  opacity: 0;
+  transition: all 1s ease 0s;
+}
+.content__text p {
+  line-height: 187.5%; /* 30/16*100 */
+}
+.content__text p:not(:last-child) {
+  margin-bottom: 10px;
+}
+.content__text.active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.content__button {
+  border-radius: 10px;
+  background-color: #4475F2;
+  color: #ffffff;
+  padding: 18px 54px;
+  font-weight: 700;
+  line-height: 156.25%; /* 25/16*100 */
+  box-shadow: 0px 0px 5px #ffffff;
+  position: relative;
+  top: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+.content__button:hover {
+  top: 3px;
+}
+.content__button.active {
+  transform: scale(1);
+}
+
+.hero__images {
+  flex: 0 1 50%;
+}
+
+.images-hero {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 27px;
+}
+@media (max-width: 479.98px) {
+  .images-hero {
+    gap: 7px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+.images-hero__image {
+  border-radius: 10px;
+  max-width: 100%;
+  max-height: 300px;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.25);
+}
+
+.images-hero__item--01 {
+  grid-row: span 2;
+  align-self: end;
+  padding-bottom: 10px;
+  transform: matrix(0.4, 0, 0, 1, 0, 0);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+@media (max-width: 1200px) {
+  .images-hero__item--01 {
+    justify-self: center;
+  }
+}
+.images-hero__item--01.active {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  opacity: 1;
+}
+
+.images-hero__item--02 {
+  align-self: center;
+  transform: matrix(1, 0, 0, 0.4, 0, 0);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+.images-hero__item--02.active {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  opacity: 1;
+}
+
+.images-hero__item--03 {
+  justify-self: end;
+  grid-row: span 2;
+  padding-bottom: 10px;
+  transform: matrix(0.4, 0, 0, 1, 0, 0);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+@media (max-width: 1200px) {
+  .images-hero__item--03 {
+    justify-self: center;
+  }
+}
+.images-hero__item--03.active {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  opacity: 1;
+}
+
+.images-hero__item--04 {
+  align-self: center;
+  padding-bottom: 10px;
+  justify-self: end;
+  transform: matrix(1, 0, 0, 0.4, 0, 0);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+.images-hero__item--04.active {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  opacity: 1;
+}

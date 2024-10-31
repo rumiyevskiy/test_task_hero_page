@@ -31,6 +31,7 @@
   transform-origin: left bottom;
   border-radius: 50px;
   bottom: 0;
+  opacity: 0;
 }
 .hero__container::before {
   left: calc(50% + 30px);
@@ -45,10 +46,12 @@
 .hero__container.active::before {
   left: calc(50% + 30px);
   transform: skewX(-20deg);
+  opacity: 1;
 }
 .hero__container.active::after {
   transform: skewX(30deg);
   left: calc(50% + 444px);
+  opacity: 1;
 }
 @media (max-width: 1200px) {
   .hero__container {
@@ -102,7 +105,7 @@
 .content__text {
   transform: translate(10%, 0px);
   opacity: 0;
-  transition: all 1s ease 0s;
+  transition: all 1s ease 0.2s;
 }
 .content__text p {
   line-height: 187.5%; /* 30/16*100 */
@@ -126,7 +129,7 @@
   position: relative;
   top: 0;
   transform: scale(0);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease 0.5s;
 }
 .content__button:hover {
   top: 3px;
@@ -184,7 +187,7 @@
   align-self: center;
   transform: matrix(1, 0, 0, 0.4, 0, 0);
   opacity: 0;
-  transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0.3s;
 }
 .images-hero__item--02.active {
   transform: matrix(1, 0, 0, 1, 0, 0);
@@ -197,7 +200,7 @@
   padding-bottom: 10px;
   transform: matrix(0.4, 0, 0, 1, 0, 0);
   opacity: 0;
-  transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0.5s;
 }
 @media (max-width: 1200px) {
   .images-hero__item--03 {
@@ -215,7 +218,7 @@
   justify-self: end;
   transform: matrix(1, 0, 0, 0.4, 0, 0);
   opacity: 0;
-  transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0.7s;
 }
 .images-hero__item--04.active {
   transform: matrix(1, 0, 0, 1, 0, 0);

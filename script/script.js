@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const animItems = document.querySelectorAll ('.anim_items');
     console.log('animItems: ', animItems );
 
-    if (animItems.length > 0) {
+    if (animItems.length > 0) { 
         window.addEventListener('scroll', animOnScroll);
         function animOnScroll() {
             for (let index = 0; index < animItems.length; index++) {
@@ -31,7 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 scrollTop = window.scrollY || document.documentElement.scrollTop;
             return {top: rect.top + scrollTop, left: rect.left + scrollLeft}
         }
-
-        animOnScroll();
+        setTimeout(() => {
+            animOnScroll();
+        }, 100);
+        
     };
 });
